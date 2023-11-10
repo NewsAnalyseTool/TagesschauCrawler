@@ -12,3 +12,5 @@ libraryDependencies += "com.lihaoyi" %% "requests" % "0.8.0"
 libraryDependencies += "com.typesafe.play" %% "play-json" % "2.9.4"
 
 libraryDependencies += "com.lihaoyi" %% "requests" % "0.8.0"
+
+libraryDependencies += "org.jsoup" % "jsoup" % "1.14.3"
