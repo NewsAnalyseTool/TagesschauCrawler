@@ -7,10 +7,20 @@ case class TagesschauData(Quelle: String, Title: String, text: String,Kategorie:
 object Crawler {
   // Define an implicit Writes for TagesschauData
   implicit val tagesschauDataWrites: Writes[TagesschauData] = Json.writes[TagesschauData]
+  val  ENTRYURL = "https://tagesschau.de/api2/news/"
 
   def main(args: Array[String]): Unit = {
     // Send a GET request and parse the JSON response
-    val response: requests.Response = requests.get("https://tagesschau.de/api2/news/")
+    print(
+      Json.stringify(
+        getTagesschauNewsPageApi(ENTRYURL)
+      )
+    )
+    //get relevant data from Json object
+
+  }
+  def getTagesschauNewsPageApi(entryUrl:String):JsValue={
+    val response: requests.Response = requests.get(entryUrl)
     val jsonInput = Json.parse(response.text)
 
     // Extract the "news" array from the JSON
@@ -29,17 +39,11 @@ object Crawler {
       }
 
       // Convert the list of TagesschauData objects to a JSON array
-      val jsonOutput = Json.toJson(newsObjects)
+       Json.toJson(newsObjects)
 
-      // Convert the new JSON object to a string
-      val outputJsonString = Json.stringify(jsonOutput)
-
-      println(outputJsonString)
     } else {
-      println("No news data found in the JSON response.")
+      throw new Exception("No news data found in the JSON response.")
     }
-
-    //get relevant data from Json object
 
   }
 
