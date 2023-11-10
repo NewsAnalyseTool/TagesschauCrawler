@@ -22,7 +22,7 @@ object Crawler {
         val quelle = "Tagesschau"
         val title = (newsItem \ "title").as[String]
         val text = extractText((newsItem\ "detailsweb").asOpt[String].getOrElse("Missing"))
-        val kategorie = "none"
+        val kategorie = (newsItem\ "topline").asOpt[String].getOrElse("Missing")
         val date = (newsItem \ "date").as[String]
 
         TagesschauData(quelle,title, text,kategorie, date)
