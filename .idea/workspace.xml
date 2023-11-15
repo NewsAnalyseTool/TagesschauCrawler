@@ -4,8 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="049bc7a0-77c3-4575-bb72-a0da2980656d" name="Changes" comment="Mongo takes Json from Crawler but an unexpected error emerges in Line 20 Something is not a JsObject&#10;Maybe read into jsVal structure">
+    <list default="true" id="049bc7a0-77c3-4575-bb72-a0da2980656d" name="Changes" comment="Crwler scheibt in die DB, nur die überprüfung funktioniert nocht nicht, vielleicht ein datentype problem?">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_github_luben_zstd_jni_1_5_0_5_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_actor_2_13_2_5_32_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_config_1_4_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__commons_codec_commons_codec_1_15_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__dnsjava_dnsjava_3_4_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivemongo_reactivemongo_2_13_1_0_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivemongo_reactivemongo_bson_api_2_13_1_0_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivemongo_reactivemongo_core_2_13_1_0_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivemongo_reactivemongo_shaded_1_0_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_java8_compat_2_13_0_9_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_slf4j_slf4j_api_1_7_32_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_xerial_snappy_snappy_java_1_1_8_4_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ConfigLoader.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/TageschauCrawler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/TageschauCrawler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Crawler.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Crawler.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Mongo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Mongo.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,21 +52,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Projekte/Projektstudium/RealCrawler/ScalaTageschauCrawler&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Projekte/Projektstudium/RealCrawler/ScalaTageschauCrawler",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -98,7 +115,9 @@
       <option name="presentableId" value="Default" />
       <updated>1699013286045</updated>
       <workItem from="1699013287740" duration="7741000" />
-      <workItem from="1699739759779" duration="6186000" />
+      <workItem from="1699739759779" duration="6434000" />
+      <workItem from="1700048583169" duration="3270000" />
+      <workItem from="1700056006542" duration="5912000" />
     </task>
     <task id="LOCAL-00001" summary="added textBody extraction and expanded Datamodel">
       <created>1699610230924</created>
@@ -114,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699619528174</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Crwler scheibt in die DB, nur die überprüfung funktioniert nocht nicht, vielleicht ein datentype problem?">
+      <created>1699746190787</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699746190787</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added textBody extraction and expanded Datamodel" />
     <MESSAGE value="Mongo takes Json from Crawler but an unexpected error emerges in Line 20 Something is not a JsObject&#10;Maybe read into jsVal structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mongo takes Json from Crawler but an unexpected error emerges in Line 20 Something is not a JsObject&#10;Maybe read into jsVal structure" />
+    <MESSAGE value="Crwler scheibt in die DB, nur die überprüfung funktioniert nocht nicht, vielleicht ein datentype problem?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crwler scheibt in die DB, nur die überprüfung funktioniert nocht nicht, vielleicht ein datentype problem?" />
   </component>
 </project>

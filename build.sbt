@@ -7,14 +7,12 @@ lazy val root = (project in file("."))
     name := "TageschauCrawler"
   )
 
-libraryDependencies += "com.lihaoyi" %% "requests" % "0.8.0"
-
-libraryDependencies += "com.typesafe.play" %% "play-json" % "2.9.4"
-
-libraryDependencies += "com.lihaoyi" %% "requests" % "0.8.0"
-
-libraryDependencies += "org.jsoup" % "jsoup" % "1.14.3"
-
-libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "4.3.0"
-
-libraryDependencies += "org.reactivemongo" %% "reactivemongo" % "1.0.10"
+libraryDependencies ++= Seq(
+  "com.lihaoyi" %% "requests" % "0.8.0",
+  "com.typesafe.play" %% "play-json" % "2.9.4",
+  "com.lihaoyi" %% "requests" % "0.8.0",
+  "org.jsoup" % "jsoup" % "1.14.3",
+  "org.mongodb.scala" %% "mongo-scala-driver" % "4.3.0",
+  "org.reactivemongo" %% "reactivemongo" % "1.0.10",
+  "com.typesafe" % "config" % "1.4.3"
+)
