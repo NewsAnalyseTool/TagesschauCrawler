@@ -14,5 +14,7 @@ libraryDependencies ++= Seq(
   "org.jsoup" % "jsoup" % "1.14.3",
   "org.mongodb.scala" %% "mongo-scala-driver" % "4.3.0",
   "org.reactivemongo" %% "reactivemongo" % "1.0.10",
-  "com.typesafe" % "config" % "1.4.3"
+  "com.typesafe" % "config" % "1.4.3",
+  "org.slf4j" % "slf4j-api" % "2.0.5",
+  "org.slf4j" % "slf4j-simple" % "2.0.5"
 )
