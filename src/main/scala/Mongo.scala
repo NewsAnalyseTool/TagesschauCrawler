@@ -45,7 +45,6 @@ object Mongo extends App {
         val existingDocument = Await.result(existingDocumentObservable.toFuture(), Duration.Inf)
 
         // falls das Dokument  noch nicht in der Collection vorhanden ist, füge es hinzu
-        println(existingDocument)
         if (existingDocument.isEmpty) {
           //Schreibe den eintrag in die Datenbank
           val insertObservable = collection.insertOne(bsonDocument)

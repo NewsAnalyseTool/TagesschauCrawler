@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="049bc7a0-77c3-4575-bb72-a0da2980656d" name="Changes" comment="Crwler scheibt in die DB, nur die überprüfung funktioniert nocht nicht, vielleicht ein datentype problem?">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_github_luben_zstd_jni_1_5_0_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_actor_2_13_2_5_32_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_config_1_4_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__commons_codec_commons_codec_1_15_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__dnsjava_dnsjava_3_4_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivemongo_reactivemongo_2_13_1_0_10_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivemongo_reactivemongo_bson_api_2_13_1_0_10_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivemongo_reactivemongo_core_2_13_1_0_10_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_reactivemongo_reactivemongo_shaded_1_0_10_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_java8_compat_2_13_0_9_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_slf4j_slf4j_api_1_7_32_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_xerial_snappy_snappy_java_1_1_8_4_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ConfigLoader.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/TageschauCrawler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/TageschauCrawler.iml" afterDir="false" />
+    <list default="true" id="049bc7a0-77c3-4575-bb72-a0da2980656d" name="Changes" comment="Mongo Connection + verification + hidden login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Crawler.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Crawler.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Mongo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Mongo.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,9 +47,10 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="ReactorSettings">
@@ -117,7 +102,8 @@
       <workItem from="1699013287740" duration="7741000" />
       <workItem from="1699739759779" duration="6434000" />
       <workItem from="1700048583169" duration="3270000" />
-      <workItem from="1700056006542" duration="5912000" />
+      <workItem from="1700056006542" duration="6623000" />
+      <workItem from="1700652374829" duration="1598000" />
     </task>
     <task id="LOCAL-00001" summary="added textBody extraction and expanded Datamodel">
       <created>1699610230924</created>
@@ -140,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699746190787</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mongo Connection + verification + hidden login">
+      <created>1700062063557</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700062063558</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +154,7 @@
     <MESSAGE value="added textBody extraction and expanded Datamodel" />
     <MESSAGE value="Mongo takes Json from Crawler but an unexpected error emerges in Line 20 Something is not a JsObject&#10;Maybe read into jsVal structure" />
     <MESSAGE value="Crwler scheibt in die DB, nur die überprüfung funktioniert nocht nicht, vielleicht ein datentype problem?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crwler scheibt in die DB, nur die überprüfung funktioniert nocht nicht, vielleicht ein datentype problem?" />
+    <MESSAGE value="Mongo Connection + verification + hidden login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mongo Connection + verification + hidden login" />
   </component>
 </project>
